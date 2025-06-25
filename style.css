@@ -149,3 +149,33 @@ a:hover {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-5px); }
 }
+.sparkle-left, .sparkle-right {
+  position: absolute;
+  top: 100px;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.sparkle-left {
+  left: 0;
+}
+
+.sparkle-right {
+  right: 0;
+}
+
+.sparkle-left img,
+.sparkle-right img {
+  max-height: 400px;
+  width: auto;
+}
+.sparkle-left img,
+.sparkle-right img {
+  animation: sparkleFloat 3s ease-in-out infinite;
+}
+
+@keyframes sparkleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
