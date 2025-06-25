@@ -1,0 +1,27 @@
+.sparkle-left, .sparkle-right {
+  position: fixed;
+  top: 120px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.sparkle-left {
+  left: 0;
+}
+
+.sparkle-right {
+  right: 0;
+}
+
+.sparkle-left img,
+.sparkle-right img {
+  max-height: 480px;
+  width: auto;
+  animation: sparkleFloat 4s ease-in-out infinite;
+}
+
+@keyframes sparkleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
