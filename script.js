@@ -1,24 +1,31 @@
-// Smooth scroll
+// Smooth scroll when clicking nav links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
+  anchor.addEventListener('click', function (e) {
     e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   });
 });
 
-// Scroll reveal effect
-function revealOnScroll() {
-  const sections = document.querySelectorAll("section");
-  const triggerBottom = window.innerHeight * 0.85;
-  sections.forEach(sec => {
-    const secTop = sec.getBoundingClientRect().top;
-    if (secTop < triggerBottom) {
-      sec.classList.add("visible");
+// Scroll reveal using IntersectionObserver
+const sections = document.querySelectorAll("section");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target); // Optional: only animate once
     }
   });
-}
+}, {
+  threshold: 0.2
+});
 
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
+sections.forEach(section => {
+  observer.observe(section);
+});
