@@ -1,105 +1,221 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Anoushka Kaur</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Raleway&display=swap" rel="stylesheet">
-</head>
-<body>
-  <header>
-    <h1>Anoushka Kaur</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
-  
-  <div class="sparkle-left">
-  <img src="assets/sparkles.png" alt="Sparkles" />
-</div>
-<div class="sparkle-right">
-  <img src="assets/sparkles.png" alt="Sparkles" />
-</div>
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  background: #fff0f5;
+  color: #4b2e2e;
+  line-height: 1.7;
+}
 
+:root {
+  scroll-padding-top: 200px;
+}
 
-  <section id="about">
-    <img src="assets/profile.jpg" alt="Profile" />
-    <h2>About Me</h2>
-    <p>I’m a third-year Computer Science and Math student passionate about software development, AI, and animal welfare. Welcome to my space!</p>
-  </section>
+header {
+  padding: 2.5rem 1rem 2rem;
+  text-align: center;
+  font-family: 'DM Serif Display', serif;
+  background: #ffe4ec;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-image: url("assets/lace-header.png");
+  background-repeat: repeat-x;
+  background-position: bottom;
+  background-size: auto 400px;
+}
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <img src="assets/project1.png" alt="Project 1"/>
-      <div>
-        <h3>NutriAI</h3>
-        <p>An AI-based meal planner that optimizes nutrition and budget. Built with Python, Pandas, and Streamlit.</p>
-        <a href="https://ainutri.streamlit.app/" target="_blank">View NutriAI</a>
-      </div>
-    </div>
-    <div class="project">
-      <img src="assets/project2.png" alt="2048 Game" />
-      <div>
-        <h3>2048 Game</h3>
-        <p>A browser-based version of the classic 2048 puzzle game made with HTML, CSS, and JavaScript.</p>
-        <a href="assets/2048-browser-game.zip" download>Download 2048 Game</a>
-      </div>
-    </div>
-  </section>
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: #c71585;
+}
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="experience">
-      <div>
-        <h3>Software Development Intern - Adxania</h3>
-        <p>~ Monitored security alerts and analyzed logs using SIEM tools to detect and respond to potential threats.</p>
-        <p>~ Actively participated in incident response drills, collaborating with teams to improve organizational preparedness.</p>
-      </div>
-    </div>
-    <div class="experience">
-      <div>
-        <h3>Software Development Intern - Maybank</h3>
-        <p>~ Proficient in security software including: Tripwire, DeepSecurity, FireEye and Splunk.</p>
-        <p>~ Graded assignments, projects, and exams, maintaining fairness and clarity in evaluations.</p>
-      </div>
-    </div>
-    <div class="experience">
-      <div>
-        <h3>Teaching Assistant - Carleton University</h3>
-        <p>~ Conducted lab sessions and tutorials, ensuring students understood key topics in algorithms, data structures, and software engineering.</p>
-        <p>~ Graded assignments, projects, and exams, maintaining fairness and clarity in evaluations.</p>
-      </div>
-    </div>
-  </section>
+nav {
+  margin-top: 1rem;
+}
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: anoushkakaur@gmail.com</p>
-    <p>Phone: 613-864-1726</p>
-    <p>GitHub: <a href="https://github.com/anoushkaur" target="_blank">anoushkaur</a></p>
-  </section>
+nav a {
+  margin: 0 1.2rem;
+  text-decoration: none;
+  color: #d63384;
+  font-weight: bold;
+  position: relative;
+  font-size: 1.1rem;
+}
 
-  <footer>
-    <p>© 2025 Anoushka Kaur</p>
-  </footer>
+nav a::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: #d63384;
+  width: 0%;
+  transition: width 0.3s;
+}
 
-  <!-- 🎀 Bow decorations -->
-  <div class="bow-decoration left-bows">
-    <img src="assets/bow.gif" alt="bow" />
-    <img src="assets/bow.gif" alt="bow" />
-    <img src="assets/bow.gif" alt="bow" />
-  </div>
-  <div class="bow-decoration right-bows">
-    <img src="assets/bow.gif" alt="bow" />
-    <img src="assets/bow.gif" alt="bow" />
-    <img src="assets/bow.gif" alt="bow" />
-  </div>
+nav a:hover::after {
+  width: 100%;
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+section {
+  background: #fff5f8;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  box-shadow: 0 8px 20px rgba(255, 182, 193, 0.3);
+  margin: 3rem auto;
+  max-width: 900px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  border: 4px dashed #f8c8dc;
+  background-image: url("assets/lace-header.png");
+  background-repeat: repeat-x;
+  background-position: top;
+  background-size: auto 50px;
+  padding-top: 80px;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section h2 {
+  font-family: 'DM Serif Display', serif;
+  text-align: center;
+  color: #b03060;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+#about img {
+  max-width: 300px;
+  border-radius: 100px;
+  display: block;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 5px solid #ffc0cb;
+}
+
+.project, .experience {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 2rem;
+  background: #ffe6f0;
+  padding: 1.5rem;
+  border-radius: 16px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 3px dotted #ffb6c1;
+}
+
+.project:hover, .experience:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 14px rgba(255, 105, 180, 0.2);
+}
+
+.project img {
+  max-width: 200px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.4);
+  border: 5px solid #ffccd5;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #c71585;
+  background: #ffe4ec;
+  margin-top: 4rem;
+  border-top: 2px dashed #ffb6c1;
+}
+
+a {
+  color: #d63384;
+  text-decoration: underline dotted;
+}
+
+a:hover {
+  color: #a31566;
+}
+
+.bow-decoration {
+  position: fixed;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.left-bows {
+  left: 10px;
+}
+
+.right-bows {
+  right: 10px;
+}
+
+.bow-decoration img {
+  width: 60px;
+  height: auto;
+  animation: floaty 1.5s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.sparkle-left, .sparkle-right {
+  position: fixed;
+  top: 150px;
+  z-index: 0;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.sparkle-left {
+  left: 0;
+}
+
+.sparkle-right {
+  right: 0;
+}
+
+.sparkle-left img,
+.sparkle-right img {
+  max-height: 600px;
+  width: auto;
+  animation: sparkleFloat 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px #ffc0cb);
+}
+
+@keyframes sparkleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 768px) {
+  .project, .experience {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+}
