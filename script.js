@@ -19,11 +19,11 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("visible");
-      observer.unobserve(entry.target); // Optional: only animate once
+      observer.unobserve(entry.target); // only animate once
     }
   });
 }, {
-  threshold: 0.2
+  threshold: 0.05 // mobile fix
 });
 
 sections.forEach(section => {
